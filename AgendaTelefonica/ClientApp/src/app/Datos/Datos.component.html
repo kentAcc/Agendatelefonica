@@ -1,0 +1,31 @@
+<h1>Telefonos</h1>
+
+<p>This component demonstrates fetching Employee data from the server.</p>
+
+<p *ngIf="!datoList"><em>Loading...</em></p>
+
+<p>
+  <a [routerLink]="['/AddDatos']">Create New</a>
+</p>
+
+<table class='table' *ngIf="datoList">
+  <thead>
+    <tr>
+      <th>IdDatos</th>
+      <th>Area</th>
+      <th> TelefonoLocal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dato of datoList">
+      <td>{{ dato.idDatos }}</td>
+      <td>{{ dato.area }}</td>
+      <td>{{ dato.telefonoLocal }}</td>
+
+      <td>
+        <a [routerLink]="['/employee/edit/', dato.idNombre]">Edit</a> |
+        <a [routerLink]="" (click)="delete(dato.idDatos)">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>  

@@ -1,0 +1,31 @@
+<h1>Persona</h1>
+
+ 
+
+<p *ngIf="!empList"><em>Loading...</em></p>
+
+<p>
+  <a [routerLink]="['/AddPersona']">Create New</a>
+</p>
+
+<table class='table' *ngIf="empList">
+  <thead>
+    <tr>
+      <th>IdNombre</th>
+      <th>Nombre</th>
+      <th> Correo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of empList">
+      <td>{{ emp.idNombre }}</td>
+      <td>{{ emp.nombre }}</td>
+      <td>{{ emp.correo }}</td>
+
+      <td>
+        <a [routerLink]="['/employee/edit/', emp.idNombre]">Edit</a> |
+        <a [routerLink]="" (click)="delete(emp.idNombre)">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>  
