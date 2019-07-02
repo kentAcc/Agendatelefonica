@@ -1,9 +1,9 @@
-import { Component, Inject } from '@angular/core';
+
+import {   Observable ,  Subscription } from 'rxjs';
+import { Component } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DatosService } from './Datos.service';
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs';
 import { Console } from '@angular/core/src/console';
  
 @Component({
@@ -35,7 +35,7 @@ export class DatosComponent {
 
   errorHandler(error: Response) {
     console.log(error);
-    return Observable.throw(error);
+    return observableThrowError(error);
   }  
 }
 

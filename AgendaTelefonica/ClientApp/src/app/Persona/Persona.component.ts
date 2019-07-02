@@ -1,9 +1,9 @@
+
+import {throwError as observableThrowError,  Observable ,  Subscription } from 'rxjs';
 import { Component, Inject } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PersonaService } from './Persona.service';
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs';
  
 @Component({
   templateUrl: './Persona.component.html'
@@ -34,7 +34,7 @@ export class PersonaComponent {
 
   errorHandler(error: Response) {
     console.log(error);
-    return Observable.throw(error);
+    return observableThrowError(error);
   }  
 }
 
