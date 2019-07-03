@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Cors;
 
 namespace AgendaTelefonica.Controllers
 {
-
+    [Route("api/[controller]/[action]")]
     [AllowAnonymous]
     public class DatoController : Controller
     {
@@ -35,8 +35,9 @@ namespace AgendaTelefonica.Controllers
             return a.Create(dato);
         }
 
-        [HttpDelete]
-        public int Delete(int id)
+      
+[HttpDelete("{id}")]
+        public int Delete( int id)
         {
             return a.DeleltebyIdIdDatos(id);
         }

@@ -13,6 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Cors" Version="5.2.6" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.1.1" />
@@ -25,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\proxy.conf.json" />
     <None Remove="ClientApp\src\app\Persona\Add\addPersona.component.html" />
     <None Remove="ClientApp\src\app\Persona\Add\addpersona.component.ts" />
     <None Remove="ClientApp\src\app\Persona\Persona.component.html" />
@@ -33,6 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\proxy.conf.json" />
     <TypeScriptCompile Include="ClientApp\src\app\Persona\Persona.component.html" />
     <TypeScriptCompile Include="ClientApp\src\app\Persona\Add\addpersona.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\Persona\Add\addPersona.component.html" />

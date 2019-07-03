@@ -12,30 +12,37 @@ using Microsoft.AspNetCore.Cors;
 
 namespace AgendaTelefonica.Controllers
 {
+    [Route("api/[controller]/[action]")]
 
-    [AllowAnonymous]
     public class PersonaController : Controller
     {
 
         AgentaDataAccessLayer a = new AgentaDataAccessLayer();
 
         [HttpGet]
-        [AllowAnonymous]
+        /* [AllowAnonymous]*/
+     
         [EnableCors("AllowAnyOrigin")]
-        public IEnumerable<Persona> Index()
+        public IEnumerable<Persona> Index(string Nombre)
         {
-            return a.getAllPersona();
+            return a.getAllPersona(Nombre);
+        }
+        [HttpGet]
+        /* [AllowAnonymous]*/
+        [EnableCors("AllowAnyOrigin")]
+        public IEnumerable<Persona> Indexall()
+        {
+            return a.getAllPersonaall();
         }
 
-
         [HttpPost]
-       
+
         public int Create([FromBody]Persona persona)
         {
             return a.Create(persona);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public int Delete(int id)
         {
             return a.DeleltePersonabyId(id);

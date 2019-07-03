@@ -1,6 +1,6 @@
 <h1>Telefonos</h1>
 
-<p>This component demonstrates fetching Employee data from the server.</p>
+ 
 
 <p *ngIf="!datoList"><em>Loading...</em></p>
 
@@ -11,14 +11,14 @@
 <table class='table' *ngIf="datoList">
   <thead>
     <tr>
-      <th>IdDatos</th>
+ 
       <th>Area</th>
-      <th> TelefonoLocal</th>
+      <th> Telefono Local</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let dato of datoList">
-      <td>{{ dato.idDatos }}</td>
+    
       <td>{{ dato.area }}</td>
       <td>{{ dato.telefonoLocal }}</td>
 

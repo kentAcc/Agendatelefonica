@@ -16,11 +16,15 @@ import { Addpersona} from './Persona/Add/addpersona.component';
 import { DatosComponent } from './Datos/Datos.component';
 import { AddDatos } from './Datos/Add/addDatos.component';
   
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
  
+ 
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 
 @NgModule({
@@ -38,7 +42,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpModule ,
     HttpClientModule,
     FormsModule,
-    FormsModule, ReactiveFormsModule ,
+    FormsModule, ReactiveFormsModule, AutocompleteLibModule, MatAutocompleteModule, MatFormFieldModule, MatInputModule, BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: '', component: PersonaComponent, pathMatch: 'full' },
       { path: 'Persona', component: PersonaComponent   }, 

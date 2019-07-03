@@ -29,7 +29,7 @@ export class DatosService {
  
 
   getDirectorio() {
-    return this.http.get(this.myAppUrl + 'Dato/Index', httpOptions).pipe(
+    return this.http.get(this.myAppUrl + 'api/Dato/Index', httpOptions).pipe(
       map(user => user));
   }
 
@@ -39,13 +39,13 @@ export class DatosService {
 
   createDato(dato: Dato): Observable<Dato> {
     console.log(dato);
-    return this.http.post<Dato>(this.myAppUrl + 'Dato/Create', dato, httpOptions)
+    return this.http.post<Dato>(this.myAppUrl + 'api/Dato/Create', dato, httpOptions)
       .pipe( );
   }
    
   deletedato(idNombre: number): Observable<{}> {
     console.log(this.myAppUrl);
-    const url = this.myAppUrl + 'Dato/Delete/' + idNombre // DELETE api/heroes/42
+    const url = this.myAppUrl + 'api/Dato/Delete/' + idNombre // DELETE api/heroes/42
     return this.http.delete(url, httpOptions)
       .pipe();
   }

@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.Mvc.Cors.Internal;
+ 
 namespace AgendaTelefonica
 {
     public class Startup
@@ -78,6 +79,7 @@ namespace AgendaTelefonica
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
 
             app.UseMvc(routes =>
             {
@@ -85,7 +87,7 @@ namespace AgendaTelefonica
                     name: "default",
                     template: "{controller}/{action=Index}/{id?}");
             });
-
+            /*
             app.UseSpa(spa =>
             {
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
@@ -98,8 +100,8 @@ namespace AgendaTelefonica
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
-
-            app.UseCors(builder =>    builder.WithOrigins("http://localhost:4200/"));
+            */
+            //app.UseCors(builder =>    builder.WithOrigins("http://localhost:4200/"));
         }
     }
 }

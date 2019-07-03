@@ -4,28 +4,25 @@ import { Component } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DatosService } from './Datos.service';
-import { Console } from '@angular/core/src/console';
+ 
  
 @Component({
   templateUrl: './Datos.component.html'
 })
 
 
-export class DatosComponent {
+export class DatosComponent {  
   public datoList: Dato[];
   respuesta: any;
   message: any;
   constructor(public http: Http, private _router: Router, private datosService: DatosService) {
     this.getEmployees();
   }
-
   getEmployees() {
     this.datosService.getDirectorio().subscribe((tempdate) => { this.datoList = <Dato[]>tempdate; console.log(this.datoList)})
-      , err => {
-        
+      , err => {        
       } 
-  }
-
+  }    
   delete(iddato) {
     var ans = confirm("Do you want to delete customer with Id: " + iddato);
     if (ans) {
@@ -35,7 +32,8 @@ export class DatosComponent {
 
   errorHandler(error: Response) {
     console.log(error);
-    return observableThrowError(error);
+/*    return observableThrowError(error);*/
+    return "";
   }  
 }
 

@@ -8,18 +8,39 @@ namespace AgendaTelefonica.Model
 {
     public class AgentaDataAccessLayer
     {
-          
-        public IEnumerable<Persona> getAllPersona()
+
+        public IEnumerable<Persona> getAllPersona(string Nombre)
         {
             try
             {
-                
+
                 using (var db = new AgendaTelelefonicaContext())
                 {
+
+                    return db.Personas.Where(x => x.Nombre.Contains(Nombre)).ToList();
+
+                }
+
+
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public IEnumerable<Persona> getAllPersonaall()
+        {
+            try
+            {
+
+                using (var db = new AgendaTelelefonicaContext())
+                {
+
                     return db.Personas.ToList();
                 }
 
-               
+
             }
             catch
             {
@@ -28,14 +49,14 @@ namespace AgendaTelefonica.Model
         }
         public int Create(Persona p)
         {
-            int inserterd=0;
+            int inserterd = 0;
             using (var db = new AgendaTelelefonicaContext())
             {
                 db.Add(p);
-                inserterd=db.SaveChanges();
+                inserterd = db.SaveChanges();
             }
 
-            return inserterd; 
+            return inserterd;
         }
 
         public int DeleltePersonabyId(int IdNombre)
@@ -111,4 +132,3 @@ namespace AgendaTelefonica.Model
 
     }
 }
-   
