@@ -16,7 +16,7 @@
 	Abri otra ventana de Cmd y nos desplazamos hasta carpeta "AgendaTelefonica"  donde se encuentra el archivo "Startup.cs"
 	Teclear dotnet run
 	
-	Normalmente se la web api escucha en la direccion https://localhost:5001
+	Normalmente la web api escucha en la direccion https://localhost:5001
 	Nos indicara "application started"	
 	Abrir explorador de chrome y escribir la dirección http://localhost:4200/
 	Y veremos la aplicación en funcionamiento
