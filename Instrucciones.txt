@@ -1,6 +1,10 @@
 
-	Para chrome, se habilita  "Allow invalid certificates for resources loaded from localhost", ya que  la aplicación corre en "Localost"
-       colocar el archivo mssqllocaldb la carpeta descomprimida en   "C:\Users\NOMBREDE_TU_USUARIO_EN_LAPC\AppData\Local\Microsoft\Microsoft SQL Server Local DB\Instances"
+	Para chrome, se habilita  "Allow invalid certificates for resources loaded from localhost", ya que  la aplicación corre en "Localost",
+	con la siguiente instruccion el la barra de direcciones "chrome://flags/#allow-insecure-localhost"  y asegurarse que esta en "Enabled"
+
+
+
+	Colocar el archivo "mssqllocaldb" la carpeta descomprimida en   "C:\Users\NOMBREDE_TU_USUARIO_EN_LAPC\AppData\Local\Microsoft\Microsoft SQL Server Local DB\Instances"
 
 	Abrir cmd
 	Desplazarse hasta ClientApp
