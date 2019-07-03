@@ -1,3 +1,5 @@
+       colocar el archivo mssqllocaldb la carpeta descomprimida en   "C:\Users\NOMBREDE_TU_USUARIO_EN_LAPC\AppData\Local\Microsoft\Microsoft SQL Server Local DB\Instances"
+
 	Abrir cmd
 	Desplazarse hasta ClientApp
 	Escribir: npm install
